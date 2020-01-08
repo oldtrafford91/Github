@@ -12,6 +12,7 @@
 		E1566D6423C4A7EC00E647CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1566D6323C4A7EC00E647CB /* Assets.xcassets */; };
 		E1566D6723C4A7EC00E647CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1566D6523C4A7EC00E647CB /* LaunchScreen.storyboard */; };
 		E1566D6F23C4B4C600E647CB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1566D6E23C4B4C600E647CB /* SearchViewController.swift */; };
+		E17BBE9A23C597AD00003DB8 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBE9923C597AD00003DB8 /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E1566D6623C4A7EC00E647CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1566D6823C4A7EC00E647CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1566D6E23C4B4C600E647CB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E17BBE9923C597AD00003DB8 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				E1566D6523C4A7EC00E647CB /* LaunchScreen.storyboard */,
 				E1566D6823C4A7EC00E647CB /* Info.plist */,
 				E1566D6E23C4B4C600E647CB /* SearchViewController.swift */,
+				E17BBE9923C597AD00003DB8 /* FavoritesViewController.swift */,
 			);
 			path = Github;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			files = (
 				E1566D6F23C4B4C600E647CB /* SearchViewController.swift in Sources */,
 				E1566D5B23C4A7B900E647CB /* AppDelegate.swift in Sources */,
+				E17BBE9A23C597AD00003DB8 /* FavoritesViewController.swift in Sources */,
 				E1566D5D23C4A7B900E647CB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
