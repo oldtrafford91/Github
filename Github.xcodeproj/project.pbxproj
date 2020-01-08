@@ -14,6 +14,7 @@
 		E1566D6F23C4B4C600E647CB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1566D6E23C4B4C600E647CB /* SearchViewController.swift */; };
 		E17BBE9A23C597AD00003DB8 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBE9923C597AD00003DB8 /* FavoritesViewController.swift */; };
 		E17BBE9C23C5B88400003DB8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBE9B23C5B88400003DB8 /* RoundedButton.swift */; };
+		E17BBE9E23C5BCD700003DB8 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBE9D23C5BCD700003DB8 /* UsernameTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E1566D6E23C4B4C600E647CB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E17BBE9923C597AD00003DB8 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		E17BBE9B23C5B88400003DB8 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		E17BBE9D23C5BCD700003DB8 /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				E1566D6E23C4B4C600E647CB /* SearchViewController.swift */,
 				E17BBE9923C597AD00003DB8 /* FavoritesViewController.swift */,
 				E17BBE9B23C5B88400003DB8 /* RoundedButton.swift */,
+				E17BBE9D23C5BCD700003DB8 /* UsernameTextField.swift */,
 			);
 			path = Github;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				E1566D6F23C4B4C600E647CB /* SearchViewController.swift in Sources */,
 				E17BBE9C23C5B88400003DB8 /* RoundedButton.swift in Sources */,
+				E17BBE9E23C5BCD700003DB8 /* UsernameTextField.swift in Sources */,
 				E1566D5B23C4A7B900E647CB /* AppDelegate.swift in Sources */,
 				E17BBE9A23C597AD00003DB8 /* FavoritesViewController.swift in Sources */,
 				E1566D5D23C4A7B900E647CB /* SceneDelegate.swift in Sources */,
