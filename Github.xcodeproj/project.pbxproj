@@ -64,16 +64,48 @@
 			children = (
 				E1566D5A23C4A7B900E647CB /* AppDelegate.swift */,
 				E1566D5C23C4A7B900E647CB /* SceneDelegate.swift */,
-				E1566D6323C4A7EC00E647CB /* Assets.xcassets */,
+				E17BBEA323C72ABF00003DB8 /* Search */,
+				E17BBEA423C72ACE00003DB8 /* Favorites */,
+				E17BBEA523C72ADB00003DB8 /* CustomView */,
+				E17BBEA623C72B0200003DB8 /* Resources */,
 				E1566D6523C4A7EC00E647CB /* LaunchScreen.storyboard */,
-				E1566D6823C4A7EC00E647CB /* Info.plist */,
+			);
+			path = Github;
+			sourceTree = "<group>";
+		};
+		E17BBEA323C72ABF00003DB8 /* Search */ = {
+			isa = PBXGroup;
+			children = (
 				E1566D6E23C4B4C600E647CB /* SearchViewController.swift */,
 				E17BBEA123C7294100003DB8 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		E17BBEA423C72ACE00003DB8 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
 				E17BBE9923C597AD00003DB8 /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		E17BBEA523C72ADB00003DB8 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
 				E17BBE9B23C5B88400003DB8 /* RoundedButton.swift */,
 				E17BBE9D23C5BCD700003DB8 /* UsernameTextField.swift */,
 			);
-			path = Github;
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		E17BBEA623C72B0200003DB8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E1566D6323C4A7EC00E647CB /* Assets.xcassets */,
+				E1566D6823C4A7EC00E647CB /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Github/Info.plist;
+				INFOPLIST_FILE = Github/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Github/Info.plist;
+				INFOPLIST_FILE = Github/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
