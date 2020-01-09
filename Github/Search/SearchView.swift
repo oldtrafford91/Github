@@ -20,9 +20,13 @@ class SearchView: UIView {
   
   private func setupView() {
     backgroundColor = .systemBackground
+    
     configureLogoImageView()
     configureUsernameTextField()
     configureCallToActionButton()
+    
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler))
+    addGestureRecognizer(tapGesture)
   }
   
   //MARK: - Helper
@@ -56,5 +60,9 @@ class SearchView: UIView {
       callToActionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
       callToActionButton.heightAnchor.constraint(equalToConstant: 50)
     ])
+  }
+  
+  @objc private func tapGestureHandler() {
+    endEditing(true)
   }
 }
