@@ -29,6 +29,7 @@ class UsernameTextField: UITextField {
     
     backgroundColor = .tertiarySystemBackground
     autocorrectionType = .no
+    autocapitalizationType = .none
     placeholder = "Enter an username"
   }
 }
