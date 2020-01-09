@@ -44,6 +44,7 @@ class SearchView: UIView {
   
   private func configureUsernameTextField() {
     addSubview(usernameTextField)
+    usernameTextField.delegate = self
     NSLayoutConstraint.activate([
       usernameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
       usernameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
@@ -64,5 +65,12 @@ class SearchView: UIView {
   
   @objc private func tapGestureHandler() {
     endEditing(true)
+  }
+}
+
+extension SearchView: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    endEditing(true)
+    return true
   }
 }

@@ -31,5 +31,6 @@ class UsernameTextField: UITextField {
     autocorrectionType = .no
     autocapitalizationType = .none
     placeholder = "Enter an username"
+    returnKeyType = .done
   }
 }
