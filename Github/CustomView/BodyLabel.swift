@@ -1,6 +1,6 @@
 import UIKit
 
-class Body: UILabel {
+class BodyLabel: UILabel {
   
   //MARK: - Initializer
   override init(frame: CGRect) {
