@@ -8,7 +8,7 @@ class BodyLabel: UILabel {
     configure()
   }
   
-  convenience init(textAligment: NSTextAlignment) {
+  convenience init(textAlignment: NSTextAlignment) {
     self.init(frame: .zero)
     self.textAlignment = textAlignment
   }

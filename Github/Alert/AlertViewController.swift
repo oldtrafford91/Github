@@ -4,8 +4,8 @@ class AlertViewController: UIViewController {
   
   //MARK: - Subviews
   let containerView = UIView()
-  let titleLabel = TitleLabel(textAligment: .center, fontSize: 20)
-  let messageLabel = BodyLabel(textAligment: .center)
+  let titleLabel = TitleLabel(textAlignment: .center, fontSize: 20)
+  let messageLabel = BodyLabel(textAlignment: .center)
   let actionButton = RoundedButton(backgroundColor: .systemPink, title: "OK")
   
   //MARK: - Properties
