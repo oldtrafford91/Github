@@ -8,6 +8,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(windowScene: windowScene)
     window?.rootViewController = createTabbarController()
+    configureAppearance()
     window?.makeKeyAndVisible()
   }
   
@@ -31,5 +32,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     favoritesViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
     let favoritesNavigationController = UINavigationController(rootViewController: favoritesViewController)
     return favoritesNavigationController
+  }
+  
+  private func configureAppearance() {
+    UITabBar.appearance().tintColor = .systemGreen
+    UINavigationBar.appearance().tintColor = .systemGreen
   }
 }
