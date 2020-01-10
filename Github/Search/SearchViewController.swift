@@ -37,10 +37,17 @@ class SearchViewController: UIViewController {
   }
   
   //MARK: - Helpers
-  func pushFollowersViewController() {
+  private func pushFollowersViewController() {
+    guard let username = validUserName() else { return }
     let followersViewController = FollowersViewController()
-    followersViewController.username = usernameTextField.text
+    followersViewController.username = username
     navigationController?.pushViewController(followersViewController, animated: true)
+  }
+  
+  private func validUserName() -> String? {
+    guard let username = usernameTextField.text else { return nil}
+    guard !username.isEmpty else { return nil}
+    return username
   }
 }
 
