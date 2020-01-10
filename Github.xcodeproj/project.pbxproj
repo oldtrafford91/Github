@@ -20,6 +20,7 @@
 		E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */; };
 		E1B116A123C8536B00ABE5C0 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A023C8536B00ABE5C0 /* TitleLabel.swift */; };
 		E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */; };
+		E1B116A623C85BAF00ABE5C0 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A523C85BAF00ABE5C0 /* AlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E1B116A023C8536B00ABE5C0 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
+		E1B116A523C85BAF00ABE5C0 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		E1566D5923C4A7B900E647CB /* Github */ = {
 			isa = PBXGroup;
 			children = (
+				E1B116A423C85B9500ABE5C0 /* Alert */,
 				E1566D5A23C4A7B900E647CB /* AppDelegate.swift */,
 				E1566D5C23C4A7B900E647CB /* SceneDelegate.swift */,
 				E17BBEA323C72ABF00003DB8 /* Search */,
@@ -134,6 +137,14 @@
 				E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		E1B116A423C85B9500ABE5C0 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				E1B116A523C85BAF00ABE5C0 /* AlertViewController.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +224,7 @@
 				E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */,
 				E17BBE9E23C5BCD700003DB8 /* UsernameTextField.swift in Sources */,
 				E17BBEA223C7294100003DB8 /* SearchView.swift in Sources */,
+				E1B116A623C85BAF00ABE5C0 /* AlertViewController.swift in Sources */,
 				E17BBEA923C740CB00003DB8 /* FollowersViewController.swift in Sources */,
 				E1566D5B23C4A7B900E647CB /* AppDelegate.swift in Sources */,
 				E17BBE9A23C597AD00003DB8 /* FavoritesViewController.swift in Sources */,
