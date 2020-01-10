@@ -1,10 +1,16 @@
 import UIKit
 
+protocol SearchViewDelegate: class {
+  func callToActionButtonDidPress()
+  func texfieldReturnKeyDidPress()
+}
+
 class SearchView: UIView {
   //MARK: - Properties
   let logoImageView = UIImageView()
   let usernameTextField = UsernameTextField()
   let callToActionButton = RoundedButton(backgroundColor: .systemGreen, title: "Search Followers")
+  weak var delegate: SearchViewDelegate?
   
   //MARK: - Initializer
   override init(frame: CGRect) {
@@ -55,6 +61,7 @@ class SearchView: UIView {
   
   private func configureCallToActionButton() {
     addSubview(callToActionButton)
+    callToActionButton.addTarget(self, action: #selector(handleButtonPress), for: .touchUpInside)
     NSLayoutConstraint.activate([
       callToActionButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50),
       callToActionButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
@@ -66,10 +73,15 @@ class SearchView: UIView {
   @objc private func tapGestureHandler() {
     endEditing(true)
   }
+  
+  @objc private func handleButtonPress() {
+    delegate?.callToActionButtonDidPress()
+  }
 }
 
 extension SearchView: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    delegate?.texfieldReturnKeyDidPress()
     endEditing(true)
     return true
   }
