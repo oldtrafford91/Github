@@ -16,6 +16,7 @@
 		E17BBE9C23C5B88400003DB8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBE9B23C5B88400003DB8 /* RoundedButton.swift */; };
 		E17BBE9E23C5BCD700003DB8 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBE9D23C5BCD700003DB8 /* UsernameTextField.swift */; };
 		E17BBEA223C7294100003DB8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBEA123C7294100003DB8 /* SearchView.swift */; };
+		E17BBEA923C740CB00003DB8 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBEA823C740CB00003DB8 /* FollowersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E17BBE9B23C5B88400003DB8 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		E17BBE9D23C5BCD700003DB8 /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
 		E17BBEA123C7294100003DB8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		E17BBEA823C740CB00003DB8 /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				E1566D5A23C4A7B900E647CB /* AppDelegate.swift */,
 				E1566D5C23C4A7B900E647CB /* SceneDelegate.swift */,
 				E17BBEA323C72ABF00003DB8 /* Search */,
+				E17BBEA723C740A600003DB8 /* Follower */,
 				E17BBEA423C72ACE00003DB8 /* Favorites */,
 				E17BBEA523C72ADB00003DB8 /* CustomView */,
 				E17BBEA623C72B0200003DB8 /* Resources */,
@@ -106,6 +109,14 @@
 				E1566D6823C4A7EC00E647CB /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E17BBEA723C740A600003DB8 /* Follower */ = {
+			isa = PBXGroup;
+			children = (
+				E17BBEA823C740CB00003DB8 /* FollowersViewController.swift */,
+			);
+			path = Follower;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				E17BBE9C23C5B88400003DB8 /* RoundedButton.swift in Sources */,
 				E17BBE9E23C5BCD700003DB8 /* UsernameTextField.swift in Sources */,
 				E17BBEA223C7294100003DB8 /* SearchView.swift in Sources */,
+				E17BBEA923C740CB00003DB8 /* FollowersViewController.swift in Sources */,
 				E1566D5B23C4A7B900E647CB /* AppDelegate.swift in Sources */,
 				E17BBE9A23C597AD00003DB8 /* FavoritesViewController.swift in Sources */,
 				E1566D5D23C4A7B900E647CB /* SceneDelegate.swift in Sources */,
