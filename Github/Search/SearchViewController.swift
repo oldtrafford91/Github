@@ -38,7 +38,9 @@ class SearchViewController: UIViewController {
   
   //MARK: - Helpers
   func pushFollowersViewController() {
-    navigationController?.pushViewController(FollowersViewController(), animated: true)
+    let followersViewController = FollowersViewController()
+    followersViewController.username = usernameTextField.text
+    navigationController?.pushViewController(followersViewController, animated: true)
   }
 }
 
