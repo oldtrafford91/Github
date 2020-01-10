@@ -38,7 +38,10 @@ class SearchViewController: UIViewController {
   
   //MARK: - Helpers
   private func pushFollowersViewController() {
-    guard let username = validUserName() else { return }
+    guard let username = validUserName() else {
+      showAlertOnMainThread(title: "Wrong Username", message: "User name is empty", buttonTitle: "OK")
+      return
+    }
     let followersViewController = FollowersViewController()
     followersViewController.username = username
     navigationController?.pushViewController(followersViewController, animated: true)
