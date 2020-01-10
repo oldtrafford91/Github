@@ -17,6 +17,7 @@
 		E17BBE9E23C5BCD700003DB8 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBE9D23C5BCD700003DB8 /* UsernameTextField.swift */; };
 		E17BBEA223C7294100003DB8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBEA123C7294100003DB8 /* SearchView.swift */; };
 		E17BBEA923C740CB00003DB8 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBEA823C740CB00003DB8 /* FollowersViewController.swift */; };
+		E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E17BBE9D23C5BCD700003DB8 /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
 		E17BBEA123C7294100003DB8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		E17BBEA823C740CB00003DB8 /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
+		E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				E17BBEA723C740A600003DB8 /* Follower */,
 				E17BBEA423C72ACE00003DB8 /* Favorites */,
 				E17BBEA523C72ADB00003DB8 /* CustomView */,
+				E1B1169D23C82D4200ABE5C0 /* Extension */,
 				E17BBEA623C72B0200003DB8 /* Resources */,
 				E1566D6523C4A7EC00E647CB /* LaunchScreen.storyboard */,
 			);
@@ -117,6 +120,14 @@
 				E17BBEA823C740CB00003DB8 /* FollowersViewController.swift */,
 			);
 			path = Follower;
+			sourceTree = "<group>";
+		};
+		E1B1169D23C82D4200ABE5C0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +202,7 @@
 			files = (
 				E1566D6F23C4B4C600E647CB /* SearchViewController.swift in Sources */,
 				E17BBE9C23C5B88400003DB8 /* RoundedButton.swift in Sources */,
+				E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */,
 				E17BBE9E23C5BCD700003DB8 /* UsernameTextField.swift in Sources */,
 				E17BBEA223C7294100003DB8 /* SearchView.swift in Sources */,
 				E17BBEA923C740CB00003DB8 /* FollowersViewController.swift in Sources */,
