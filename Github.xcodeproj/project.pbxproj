@@ -22,6 +22,8 @@
 		E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */; };
 		E1B116A623C85BAF00ABE5C0 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A523C85BAF00ABE5C0 /* AlertViewController.swift */; };
 		E1B116A823C86B8100ABE5C0 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A723C86B8100ABE5C0 /* UIViewController+Extensions.swift */; };
+		E1B116AC23C876D300ABE5C0 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116AB23C876D300ABE5C0 /* Follower.swift */; };
+		E1B9631123C9B71900BF73EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B9631023C9B71900BF73EA /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
 		E1B116A523C85BAF00ABE5C0 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		E1B116A723C86B8100ABE5C0 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		E1B116AB23C876D300ABE5C0 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		E1B9631023C9B71900BF73EA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		E1566D5923C4A7B900E647CB /* Github */ = {
 			isa = PBXGroup;
 			children = (
+				E1B116AA23C876BE00ABE5C0 /* Model */,
 				E1B116A423C85B9500ABE5C0 /* Alert */,
 				E1566D5A23C4A7B900E647CB /* AppDelegate.swift */,
 				E1566D5C23C4A7B900E647CB /* SceneDelegate.swift */,
@@ -150,6 +155,15 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		E1B116AA23C876BE00ABE5C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1B116AB23C876D300ABE5C0 /* Follower.swift */,
+				E1B9631023C9B71900BF73EA /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,12 +235,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1566D6F23C4B4C600E647CB /* SearchViewController.swift in Sources */,
+				E1B116AC23C876D300ABE5C0 /* Follower.swift in Sources */,
 				E17BBE9C23C5B88400003DB8 /* RoundedButton.swift in Sources */,
 				E1B116A823C86B8100ABE5C0 /* UIViewController+Extensions.swift in Sources */,
 				E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */,
 				E1B116A123C8536B00ABE5C0 /* TitleLabel.swift in Sources */,
 				E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */,
 				E17BBE9E23C5BCD700003DB8 /* UsernameTextField.swift in Sources */,
+				E1B9631123C9B71900BF73EA /* User.swift in Sources */,
 				E17BBEA223C7294100003DB8 /* SearchView.swift in Sources */,
 				E1B116A623C85BAF00ABE5C0 /* AlertViewController.swift in Sources */,
 				E17BBEA923C740CB00003DB8 /* FollowersViewController.swift in Sources */,
