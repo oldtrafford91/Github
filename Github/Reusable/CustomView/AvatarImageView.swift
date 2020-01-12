@@ -1,7 +1,7 @@
 import UIKit
 
 class AvatarImageView: UIImageView {
-  
+  let placeholderImage = #imageLiteral(resourceName: "avatar-placeholder")
   // MARK: - Initializers
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -14,7 +14,10 @@ class AvatarImageView: UIImageView {
   
   // MARK: - Setup
   private func configure() {
+    translatesAutoresizingMaskIntoConstraints = false
+    image = placeholderImage
     layer.cornerRadius = 10
     layer.masksToBounds = true
+    
   }
 }
