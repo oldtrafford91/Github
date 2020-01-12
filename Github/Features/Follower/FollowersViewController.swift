@@ -14,6 +14,7 @@ class FollowersViewController: UIViewController {
       case .success(let followers):
         print(followers)
       case .failure(let error):
+        self.showAlertOnMainThread(title: "Badthing happen", message: error.rawValue, buttonTitle: "OK")
         print(error.rawValue)
       }
     }
