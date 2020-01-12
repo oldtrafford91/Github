@@ -19,6 +19,7 @@
 		E17BBEA923C740CB00003DB8 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17BBEA823C740CB00003DB8 /* FollowersViewController.swift */; };
 		E1A14AF523CAFF1100CF7903 /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A14AF423CAFF1100CF7903 /* FollowerCollectionViewCell.swift */; };
 		E1A14AF723CB00CA00CF7903 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A14AF623CB00CA00CF7903 /* UIView+Layout.swift */; };
+		E1A14AF923CB07D500CF7903 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A14AF823CB07D500CF7903 /* AvatarImageView.swift */; };
 		E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */; };
 		E1B116A123C8536B00ABE5C0 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A023C8536B00ABE5C0 /* TitleLabel.swift */; };
 		E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */; };
@@ -44,6 +45,7 @@
 		E17BBEA823C740CB00003DB8 /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
 		E1A14AF423CAFF1100CF7903 /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1A14AF623CB00CA00CF7903 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		E1A14AF823CB07D500CF7903 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E1B116A023C8536B00ABE5C0 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				E17BBE9D23C5BCD700003DB8 /* UsernameTextField.swift */,
 				E1B116A023C8536B00ABE5C0 /* TitleLabel.swift */,
 				E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */,
+				E1A14AF823CB07D500CF7903 /* AvatarImageView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */,
 				E1B116A123C8536B00ABE5C0 /* TitleLabel.swift in Sources */,
 				E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */,
+				E1A14AF923CB07D500CF7903 /* AvatarImageView.swift in Sources */,
 				E1A14AF523CAFF1100CF7903 /* FollowerCollectionViewCell.swift in Sources */,
 				E17BBE9E23C5BCD700003DB8 /* UsernameTextField.swift in Sources */,
 				E1B9631123C9B71900BF73EA /* User.swift in Sources */,
