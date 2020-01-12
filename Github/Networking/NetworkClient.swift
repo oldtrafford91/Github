@@ -2,6 +2,9 @@ import Foundation
 
 enum NetworkError: String, Error {
   case unknown = "Unknown error"
+  case connectivity = "Unable to complete your request. Please check your internet connection."
+  case invalidResponse = "Invalid response from server. Please try again."
+  case invalidData = "The data received from server is invalid. Please try again."
 }
 
 class NetworkClient {
@@ -24,18 +27,18 @@ class NetworkClient {
     let task = session.dataTask(with: request) { (data, response, error) in
       
       if let _ = error {
-        completion(.failure(.unknown))
+        completion(.failure(.connectivity))
         return
       }
       
       guard let httpResponse = response as? HTTPURLResponse,
         (200...299).contains(httpResponse.statusCode) else {
-          completion(.failure(.unknown))
+          completion(.failure(.invalidResponse))
           return
       }
       
       guard let data = data else {
-        completion(.failure(.unknown))
+        completion(.failure(.invalidData))
         return
       }
       
@@ -45,7 +48,7 @@ class NetworkClient {
         let decoded = try jsonDecoder.decode(T.self, from: data)
         completion(.success(decoded))
       } catch {
-        completion(.failure(.unknown))
+        completion(.failure(.invalidData))
       }
     }
     return task
