@@ -8,13 +8,17 @@ class FollowersViewController: UIViewController {
   //MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = username
-    view.backgroundColor = .systemBackground
-    navigationController?.navigationBar.prefersLargeTitles = true
+    configureUI()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(false, animated: true)
+  }
+  
+  private func configureUI() {
+    title = username
+    view.backgroundColor = .systemBackground
+    navigationController?.navigationBar.prefersLargeTitles = true
   }
 }
