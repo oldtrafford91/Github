@@ -9,6 +9,14 @@ class FollowersViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
+    NetworkClient.shared.get(username: username, page: 1) { (result: Result<[Follower], NetworkError>) in
+      switch result {
+      case .success(let followers):
+        print(followers)
+      case .failure(let error):
+        print(error.rawValue)
+      }
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
