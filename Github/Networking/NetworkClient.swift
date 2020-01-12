@@ -5,6 +5,7 @@ enum NetworkError: String, Error {
   case connectivity = "Unable to complete your request. Please check your internet connection."
   case invalidResponse = "Invalid response from server. Please try again."
   case invalidData = "The data received from server is invalid. Please try again."
+  case parsingError = "Eror passing data. Please check your model declaration"
 }
 
 class NetworkClient {
@@ -48,9 +49,10 @@ class NetworkClient {
         let decoded = try jsonDecoder.decode(T.self, from: data)
         completion(.success(decoded))
       } catch {
-        completion(.failure(.invalidData))
+        completion(.failure(.parsingError))
       }
     }
+    task.resume()
     return task
   }
 }
