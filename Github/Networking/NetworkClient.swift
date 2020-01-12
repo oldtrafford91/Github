@@ -21,7 +21,7 @@ class NetworkClient {
   
   @discardableResult
   func get<T: Codable>(username: String, page: Int, completion: @escaping (Result<T, NetworkError>) -> Void) -> URLSessionTask {
-    let followerURL = URL(string: "https://api.github.com/\(username)/followers")!
+    let followerURL = URL(string: "https://api.github.com/users/\(username)/followers")!
     let request = URLRequest(url: followerURL)
     
     let task = session.dataTask(with: request) { (data, response, error) in
