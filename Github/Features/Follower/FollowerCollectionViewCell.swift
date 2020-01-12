@@ -6,7 +6,7 @@ class FollowerCollectionViewCell: UICollectionViewCell {
   static let reuseIdentifier = "FollowerCollectionViewCell"
   
   // MARK: - Subviews
-  let avatarImageView = UIImageView()
+  let avatarImageView = AvatarImageView(frame: .zero)
   let usernameLabel = TitleLabel(textAlignment: .center, fontSize: 16)
   
   // MARK: - Initializers
@@ -29,7 +29,7 @@ class FollowerCollectionViewCell: UICollectionViewCell {
       avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
       avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
       avatarImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
-      avatarImageView.widthAnchor.constraint(equalTo: avatarImageView.heightAnchor),
+      avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),
       
       usernameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 12),
       usernameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
