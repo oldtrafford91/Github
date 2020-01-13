@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1099E4723CC58A9009E7565 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1099E4623CC58A9009E7565 /* NetworkError.swift */; };
 		E1566D5B23C4A7B900E647CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1566D5A23C4A7B900E647CB /* AppDelegate.swift */; };
 		E1566D5D23C4A7B900E647CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1566D5C23C4A7B900E647CB /* SceneDelegate.swift */; };
 		E1566D6423C4A7EC00E647CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1566D6323C4A7EC00E647CB /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E1099E4623CC58A9009E7565 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E1566D5723C4A7B900E647CB /* Github.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Github.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1566D5A23C4A7B900E647CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1566D5C23C4A7B900E647CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B9631723C9CB6900BF73EA /* NetworkClient.swift */,
+				E1099E4623CC58A9009E7565 /* NetworkError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				E1B116A123C8536B00ABE5C0 /* TitleLabel.swift in Sources */,
 				E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */,
 				E1A14AF923CB07D500CF7903 /* AvatarImageView.swift in Sources */,
+				E1099E4723CC58A9009E7565 /* NetworkError.swift in Sources */,
 				E1A14AF523CAFF1100CF7903 /* FollowerCollectionViewCell.swift in Sources */,
 				E17BBE9E23C5BCD700003DB8 /* UsernameTextField.swift in Sources */,
 				E1B9631123C9B71900BF73EA /* User.swift in Sources */,
