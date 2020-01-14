@@ -108,9 +108,9 @@
 			children = (
 				E1B9631623C9CA4100BF73EA /* Networking */,
 				E1B9631423C9C75C00BF73EA /* App */,
-				E1B9631223C9C73000BF73EA /* Features */,
+				E1B9631223C9C73000BF73EA /* Modules */,
 				E1B116AA23C876BE00ABE5C0 /* Model */,
-				E1B9631523C9C76F00BF73EA /* Reusable */,
+				E1B9631523C9C76F00BF73EA /* Shared */,
 				E17BBEA623C72B0200003DB8 /* Resources */,
 			);
 			path = Github;
@@ -201,14 +201,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E1B9631223C9C73000BF73EA /* Features */ = {
+		E1B9631223C9C73000BF73EA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				E17BBEA323C72ABF00003DB8 /* Search */,
 				E17BBEA423C72ACE00003DB8 /* Favorites */,
 				E17BBEA723C740A600003DB8 /* Follower */,
 			);
-			path = Features;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		E1B9631423C9C75C00BF73EA /* App */ = {
@@ -220,14 +220,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		E1B9631523C9C76F00BF73EA /* Reusable */ = {
+		E1B9631523C9C76F00BF73EA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				E1B1169D23C82D4200ABE5C0 /* Extension */,
 				E1B116A423C85B9500ABE5C0 /* Alert */,
 				E17BBEA523C72ADB00003DB8 /* CustomView */,
 			);
-			path = Reusable;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		E1B9631623C9CA4100BF73EA /* Networking */ = {
