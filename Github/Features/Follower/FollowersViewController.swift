@@ -7,9 +7,9 @@ class FollowersViewController: UIViewController {
   
   //MARK: Properties
   var username: String!
-  var followers: [Follower] = []
   var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
   var currentSnapshot: NSDiffableDataSourceSnapshot<Section, Follower>!
+  let viewModel = FollowersViewModel()
   
   // MARK: - Views
   var collectionView: UICollectionView!
@@ -33,6 +33,7 @@ class FollowersViewController: UIViewController {
     view.backgroundColor = .systemBackground
     navigationController?.navigationBar.prefersLargeTitles = true
     configureCollectionView()
+    configureViewModelBinding()
   }
   
   private func configureCollectionView() {
@@ -57,23 +58,24 @@ class FollowersViewController: UIViewController {
     })
   }
   
-  // MARK: - Helpers
-  private func getFollowers() {
-    NetworkClient.shared.get(username: username, page: 1) { [weak self] (result: Result<[Follower], NetworkError>) in
+  private func configureViewModelBinding() {
+    viewModel.onFetchedFollowers = { [weak self] followers in
       guard let self = self else { return }
-      switch result {
-      case .success(let followers):
-        print(followers)
-        self.followers = followers
-        self.updateUI(animated: true)
-      case .failure(let error):
-        self.showAlertOnMainThread(title: "Badthing happen", message: error.rawValue, buttonTitle: "OK")
-        print(error.rawValue)
-      }
+      self.updateUI(with: followers)
     }
+    viewModel.onFetchFollowersFailed = { [weak self] error in
+      guard let self = self else { return }
+      self.showAlertOnMainThread(title: "Something wrong", message: error.localizedDescription, buttonTitle: "OK")
+    }
+
   }
   
-  private func updateUI(animated: Bool = true) {
+  // MARK: - Helpers
+  private func getFollowers() {
+    viewModel.getFollowers(of: username)
+  }
+  
+  private func updateUI(with followers: [Follower], animated: Bool = true) {
     currentSnapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
     currentSnapshot.appendSections([.main])
     currentSnapshot.appendItems(followers, toSection: .main)

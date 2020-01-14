@@ -20,7 +20,6 @@ class FollowerCollectionViewCell: UICollectionViewCell {
   }
   
   // MARK: - Setup
-  
   private func configure() {
     addSubview(avatarImageView)
     addSubview(usernameLabel)
