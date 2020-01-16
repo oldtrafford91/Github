@@ -34,6 +34,9 @@
 		E1B116AC23C876D300ABE5C0 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116AB23C876D300ABE5C0 /* Follower.swift */; };
 		E1B9631123C9B71900BF73EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B9631023C9B71900BF73EA /* User.swift */; };
 		E1B9631823C9CB6900BF73EA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B9631723C9CB6900BF73EA /* HTTPClient.swift */; };
+		E1C95FB823EAACD20097EA2F /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C95FB723EAACD20097EA2F /* ImageDownloader.swift */; };
+		E1C95FBA23EAB25B0097EA2F /* AvatarImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C95FB923EAB25B0097EA2F /* AvatarImageView+DownloadImage.swift */; };
+		E1C95FBC23EAC1C30097EA2F /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C95FBB23EAC1C30097EA2F /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		E1B116AB23C876D300ABE5C0 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		E1B9631023C9B71900BF73EA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E1B9631723C9CB6900BF73EA /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		E1C95FB723EAACD20097EA2F /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		E1C95FB923EAB25B0097EA2F /* AvatarImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AvatarImageView+DownloadImage.swift"; sourceTree = "<group>"; };
+		E1C95FBB23EAC1C30097EA2F /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +186,7 @@
 				E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */,
 				E1B116A723C86B8100ABE5C0 /* UIViewController+Extensions.swift */,
 				E1A14AF623CB00CA00CF7903 /* UIView+Layout.swift */,
+				E1C95FB923EAB25B0097EA2F /* AvatarImageView+DownloadImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -238,6 +245,8 @@
 				E1B9631723C9CB6900BF73EA /* HTTPClient.swift */,
 				E16ACAB723E9567800AA362A /* JSONMapper.swift */,
 				E1099E4623CC58A9009E7565 /* APIError.swift */,
+				E1C95FB723EAACD20097EA2F /* ImageDownloader.swift */,
+				E1C95FBB23EAC1C30097EA2F /* ImageCache.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -314,6 +323,7 @@
 			files = (
 				E1566D6F23C4B4C600E647CB /* SearchViewController.swift in Sources */,
 				E1B116AC23C876D300ABE5C0 /* Follower.swift in Sources */,
+				E1C95FB823EAACD20097EA2F /* ImageDownloader.swift in Sources */,
 				E13877EF23E8826A00135169 /* FollowerServices.swift in Sources */,
 				E17BBE9C23C5B88400003DB8 /* RoundedButton.swift in Sources */,
 				E16ACABA23E9804700AA362A /* FollowersViewModel.swift in Sources */,
@@ -322,6 +332,7 @@
 				E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */,
 				E1B116A123C8536B00ABE5C0 /* TitleLabel.swift in Sources */,
 				E1099E4923CC5C38009E7565 /* FollowerEndpoint.swift in Sources */,
+				E1C95FBA23EAB25B0097EA2F /* AvatarImageView+DownloadImage.swift in Sources */,
 				E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */,
 				E1A14AF923CB07D500CF7903 /* AvatarImageView.swift in Sources */,
 				E1099E4723CC58A9009E7565 /* APIError.swift in Sources */,
@@ -336,6 +347,7 @@
 				E1566D5B23C4A7B900E647CB /* AppDelegate.swift in Sources */,
 				E17BBE9A23C597AD00003DB8 /* FavoritesViewController.swift in Sources */,
 				E1566D5D23C4A7B900E647CB /* SceneDelegate.swift in Sources */,
+				E1C95FBC23EAC1C30097EA2F /* ImageCache.swift in Sources */,
 				E16ACABD23E9C9A700AA362A /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
