@@ -5,7 +5,7 @@ class FollowersViewController: UIViewController {
     case main
   }
   
-  //MARK: Properties
+  //MARK: - Properties
   var username: String!
   var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
   var currentSnapshot: NSDiffableDataSourceSnapshot<Section, Follower>!
@@ -27,7 +27,7 @@ class FollowersViewController: UIViewController {
     navigationController?.setNavigationBarHidden(false, animated: true)
   }
   
-  // MARK: Setup
+  // MARK: - Setup
   private func configureHierachy() {
     title = username
     view.backgroundColor = .systemBackground
@@ -40,6 +40,7 @@ class FollowersViewController: UIViewController {
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
     collectionView.register(FollowerCollectionViewCell.self, forCellWithReuseIdentifier: FollowerCollectionViewCell.reuseIdentifier)
     collectionView.backgroundColor = .systemBackground
+    collectionView.delegate = self
     view.addSubview(collectionView)
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
@@ -61,7 +62,7 @@ class FollowersViewController: UIViewController {
   private func configureViewModelBinding() {
     viewModel.onFetchedFollowers = { [weak self] followers in
       guard let self = self else { return }
-      self.updateUI(with: followers)
+      self.updateData(with: followers)
     }
     viewModel.onFetchFollowersFailed = { [weak self] error in
       guard let self = self else { return }
@@ -75,7 +76,7 @@ class FollowersViewController: UIViewController {
     viewModel.getFollowers(of: username)
   }
   
-  private func updateUI(with followers: [Follower], animated: Bool = true) {
+  private func updateData(with followers: [Follower], animated: Bool = true) {
     currentSnapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
     currentSnapshot.appendSections([.main])
     currentSnapshot.appendItems(followers, toSection: .main)
@@ -92,5 +93,18 @@ class FollowersViewController: UIViewController {
     layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
     layout.itemSize = CGSize(width: itemSize, height: itemSize + 40)
     return layout
+  }
+}
+
+// MARK: - UICollectionView Delegate
+extension FollowersViewController: UICollectionViewDelegate {
+  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    let contentHeight = scrollView.contentSize.height
+    let scrollViewHeight = scrollView.bounds.height
+    let contentOffsetY = scrollView.contentOffset.y
+    
+    if contentOffsetY >= (contentHeight - scrollViewHeight) {
+      getFollowers()
+    }
   }
 }
