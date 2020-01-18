@@ -5,20 +5,22 @@ class FollowersViewController: UIViewController {
     case main
   }
   
-  //MARK: - Properties
+  // MARK: - Properties
   var username: String!
   var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
   var currentSnapshot: NSDiffableDataSourceSnapshot<Section, Follower>!
+  
+  // MARK: - Dependencies
   let viewModel = FollowersViewModel()
   
   // MARK: - Views
   var collectionView: UICollectionView!
+  let loadingView = LoadingView()
   
   //MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     configureHierachy()
-    configureDataSource()
     getFollowers()
   }
   
@@ -41,6 +43,7 @@ class FollowersViewController: UIViewController {
     collectionView.register(FollowerCollectionViewCell.self, forCellWithReuseIdentifier: FollowerCollectionViewCell.reuseIdentifier)
     collectionView.backgroundColor = .systemBackground
     collectionView.delegate = self
+    configureDataSource()
     view.addSubview(collectionView)
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
@@ -68,7 +71,14 @@ class FollowersViewController: UIViewController {
       guard let self = self else { return }
       self.showAlertOnMainThread(title: "Something wrong", message: error.localizedDescription, buttonTitle: "OK")
     }
-
+    viewModel.onLoading = { [weak self] isLoading in
+      guard let self = self else { return }
+      if isLoading {
+        DispatchQueue.main.async { self.loadingView.showInView(self.view) }
+      } else {
+        DispatchQueue.main.async { self.loadingView.dismiss() }
+      }
+    }
   }
   
   // MARK: - Helpers
@@ -98,7 +108,7 @@ class FollowersViewController: UIViewController {
 
 // MARK: - UICollectionView Delegate
 extension FollowersViewController: UICollectionViewDelegate {
-  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let contentHeight = scrollView.contentSize.height
     let scrollViewHeight = scrollView.bounds.height
     let contentOffsetY = scrollView.contentOffset.y

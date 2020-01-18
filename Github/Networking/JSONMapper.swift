@@ -20,9 +20,8 @@ class JSONMapper<T: Codable> {
           } catch {
             preconditionFailure("Unhandled error: \(error.localizedDescription)")
           }
-//        case 403:
-//          print(response.value(forHTTPHeaderField: "X-RateLimit-Reset"))
-//          completion(.failure(.requestError(403, "API rate limit exceeded")))
+        case 403:
+          completion(.failure(.requestError(403, "API rate limit exceeded")))
         case 404:
           completion(.failure(.requestError(404, "User don't exist")))
         case (400...499):

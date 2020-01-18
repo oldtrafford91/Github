@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E1099E4723CC58A9009E7565 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1099E4623CC58A9009E7565 /* APIError.swift */; };
 		E1099E4923CC5C38009E7565 /* FollowerEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1099E4823CC5C38009E7565 /* FollowerEndpoint.swift */; };
+		E1366C9623EBEFDA008B2AFB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1366C9523EBEFDA008B2AFB /* LoadingView.swift */; };
 		E13877EF23E8826A00135169 /* FollowerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13877EE23E8826A00135169 /* FollowerServices.swift */; };
 		E1566D5B23C4A7B900E647CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1566D5A23C4A7B900E647CB /* AppDelegate.swift */; };
 		E1566D5D23C4A7B900E647CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1566D5C23C4A7B900E647CB /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		E1099E4623CC58A9009E7565 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		E1099E4823CC5C38009E7565 /* FollowerEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerEndpoint.swift; sourceTree = "<group>"; };
+		E1366C9523EBEFDA008B2AFB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E13877EE23E8826A00135169 /* FollowerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerServices.swift; sourceTree = "<group>"; };
 		E1566D5723C4A7B900E647CB /* Github.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Github.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1566D5A23C4A7B900E647CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				E1B116A023C8536B00ABE5C0 /* TitleLabel.swift */,
 				E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */,
 				E1A14AF823CB07D500CF7903 /* AvatarImageView.swift */,
+				E1366C9523EBEFDA008B2AFB /* LoadingView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				E17BBEA923C740CB00003DB8 /* FollowersViewController.swift in Sources */,
 				E1566D5B23C4A7B900E647CB /* AppDelegate.swift in Sources */,
 				E17BBE9A23C597AD00003DB8 /* FavoritesViewController.swift in Sources */,
+				E1366C9623EBEFDA008B2AFB /* LoadingView.swift in Sources */,
 				E1566D5D23C4A7B900E647CB /* SceneDelegate.swift in Sources */,
 				E1C95FBC23EAC1C30097EA2F /* ImageCache.swift in Sources */,
 				E16ACABD23E9C9A700AA362A /* Endpoint.swift in Sources */,
