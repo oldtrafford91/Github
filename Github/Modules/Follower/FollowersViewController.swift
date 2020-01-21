@@ -17,6 +17,7 @@ class FollowersViewController: UIViewController {
   var collectionView: UICollectionView!
   let loadingView = LoadingView()
   let refreshControl = UIRefreshControl()
+  let searchController = UISearchController()
   
   //MARK: - View Life Cycle
   override func viewDidLoad() {
@@ -36,6 +37,7 @@ class FollowersViewController: UIViewController {
     view.backgroundColor = .systemBackground
     navigationController?.navigationBar.prefersLargeTitles = true
     configureCollectionView()
+    configureSearchController()
     configureViewModelBinding()
   }
   
@@ -43,7 +45,7 @@ class FollowersViewController: UIViewController {
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
     collectionView.alwaysBounceVertical = true
     collectionView.refreshControl = refreshControl
-    collectionView.refreshControl?.addTarget(self, action: #selector(reload), for: .valueChanged)
+    collectionView.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
     collectionView.register(FollowerCollectionViewCell.self, forCellWithReuseIdentifier: FollowerCollectionViewCell.reuseIdentifier)
     collectionView.backgroundColor = .systemBackground
     collectionView.delegate = self
@@ -66,6 +68,13 @@ class FollowersViewController: UIViewController {
     })
   }
   
+  private func configureSearchController() {
+    searchController.searchResultsUpdater = self
+    searchController.searchBar.placeholder = "Please enter an user name"
+    searchController.obscuresBackgroundDuringPresentation = false
+    navigationItem.searchController = searchController
+  }
+  
   private func configureViewModelBinding() {
     viewModel.onFetchedFollowers = { [weak self] followers in
       guard let self = self else { return }
@@ -75,6 +84,10 @@ class FollowersViewController: UIViewController {
         }
       }
       self.updateData(with: followers)
+    }
+    viewModel.onFilterFollowers = { [weak self] filteredFollowers in
+      guard let self = self else { return }
+      self.updateData(with: filteredFollowers)
     }
     viewModel.onFetchFollowersFailed = { [weak self] error in
       guard let self = self else { return }
@@ -98,7 +111,7 @@ class FollowersViewController: UIViewController {
     viewModel.getFollowers(of: username)
   }
   
-  @objc private func reload() {
+  @objc private func reloadData() {
     viewModel.reload()
   }
   
@@ -124,7 +137,7 @@ class FollowersViewController: UIViewController {
 
 // MARK: - UICollectionView Delegate
 extension FollowersViewController: UICollectionViewDelegate {
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     let contentHeight = scrollView.contentSize.height
     let scrollViewHeight = scrollView.bounds.height
     let contentOffsetY = scrollView.contentOffset.y
@@ -132,5 +145,15 @@ extension FollowersViewController: UICollectionViewDelegate {
     if contentOffsetY >= (contentHeight - scrollViewHeight) {
       getFollowers()
     }
+  }
+}
+
+// MARK: - UISearchResultsUpdating
+extension FollowersViewController: UISearchResultsUpdating, UISearchBarDelegate {
+  func updateSearchResults(for searchController: UISearchController) {
+    guard let filter = searchController.searchBar.text else {
+      return
+    }
+    viewModel.filterUser(using: filter)
   }
 }

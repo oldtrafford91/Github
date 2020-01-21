@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class FollowersViewModel {
   typealias Observer<T> = (T) -> ()
@@ -21,6 +21,7 @@ class FollowersViewModel {
     }
   }
   
+  var onFilterFollowers: Observer<[Follower]> = { _ in }
   var onFetchedFollowers: Observer<[Follower]> = { _ in }
   var onFetchFollowersFailed: Observer<APIError> = { _ in }
   var onLoading: Observer<Bool> = { _ in }
@@ -64,5 +65,17 @@ class FollowersViewModel {
         self.onFetchFollowersFailed(error)
       }
     }
+  }
+  
+  func filterUser(using filter: String) {
+    var filteredFollowers = [Follower]()
+    if filter.count == 0 {
+      filteredFollowers = followers
+    } else {
+      filteredFollowers = followers.filter {
+        $0.login.lowercased().contains(filter.lowercased())
+      }
+    }
+    onFilterFollowers(filteredFollowers)
   }
 }
