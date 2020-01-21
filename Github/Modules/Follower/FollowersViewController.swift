@@ -16,6 +16,7 @@ class FollowersViewController: UIViewController {
   // MARK: - Views
   var collectionView: UICollectionView!
   let loadingView = LoadingView()
+  let refreshControl = UIRefreshControl()
   
   //MARK: - View Life Cycle
   override func viewDidLoad() {
@@ -40,6 +41,9 @@ class FollowersViewController: UIViewController {
   
   private func configureCollectionView() {
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
+    collectionView.alwaysBounceVertical = true
+    collectionView.refreshControl = refreshControl
+    collectionView.refreshControl?.addTarget(self, action: #selector(reload), for: .valueChanged)
     collectionView.register(FollowerCollectionViewCell.self, forCellWithReuseIdentifier: FollowerCollectionViewCell.reuseIdentifier)
     collectionView.backgroundColor = .systemBackground
     collectionView.delegate = self
@@ -65,6 +69,11 @@ class FollowersViewController: UIViewController {
   private func configureViewModelBinding() {
     viewModel.onFetchedFollowers = { [weak self] followers in
       guard let self = self else { return }
+      if followers.count == 0 {
+        DispatchQueue.main.async {
+          self.collectionView.showEmptyStateView(message: "This user don't have any followers. Go follow her/him")
+        }
+      }
       self.updateData(with: followers)
     }
     viewModel.onFetchFollowersFailed = { [weak self] error in
@@ -76,7 +85,10 @@ class FollowersViewController: UIViewController {
       if isLoading {
         DispatchQueue.main.async { self.loadingView.showInView(self.view) }
       } else {
-        DispatchQueue.main.async { self.loadingView.dismiss() }
+        DispatchQueue.main.async {
+          self.refreshControl.endRefreshing()
+          self.loadingView.dismiss()
+        }
       }
     }
   }
@@ -84,6 +96,10 @@ class FollowersViewController: UIViewController {
   // MARK: - Helpers
   private func getFollowers() {
     viewModel.getFollowers(of: username)
+  }
+  
+  @objc private func reload() {
+    viewModel.reload()
   }
   
   private func updateData(with followers: [Follower], animated: Bool = true) {

@@ -27,6 +27,8 @@
 		E1A14AF523CAFF1100CF7903 /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A14AF423CAFF1100CF7903 /* FollowerCollectionViewCell.swift */; };
 		E1A14AF723CB00CA00CF7903 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A14AF623CB00CA00CF7903 /* UIView+Layout.swift */; };
 		E1A14AF923CB07D500CF7903 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A14AF823CB07D500CF7903 /* AvatarImageView.swift */; };
+		E1AB279C23ED5D7D004BDF15 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB279B23ED5D7D004BDF15 /* EmptyStateView.swift */; };
+		E1AB279E23ED6D64004BDF15 /* UICollectionView+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB279D23ED6D64004BDF15 /* UICollectionView+EmptyState.swift */; };
 		E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */; };
 		E1B116A123C8536B00ABE5C0 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A023C8536B00ABE5C0 /* TitleLabel.swift */; };
 		E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */; };
@@ -63,6 +65,8 @@
 		E1A14AF423CAFF1100CF7903 /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1A14AF623CB00CA00CF7903 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		E1A14AF823CB07D500CF7903 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
+		E1AB279B23ED5D7D004BDF15 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		E1AB279D23ED6D64004BDF15 /* UICollectionView+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+EmptyState.swift"; sourceTree = "<group>"; };
 		E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E1B116A023C8536B00ABE5C0 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				E1AB279823ED5B2A004BDF15 /* TextField */,
 				E1AB279723ED5B1E004BDF15 /* Label */,
 				E1AB279623ED5B11004BDF15 /* Button */,
+				E1AB279B23ED5D7D004BDF15 /* EmptyStateView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				E1B116A723C86B8100ABE5C0 /* UIViewController+Extensions.swift */,
 				E1A14AF623CB00CA00CF7903 /* UIView+Layout.swift */,
 				E1C95FB923EAB25B0097EA2F /* AvatarImageView+DownloadImage.swift */,
+				E1AB279D23ED6D64004BDF15 /* UICollectionView+EmptyState.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -370,12 +376,14 @@
 				E13877EF23E8826A00135169 /* FollowerServices.swift in Sources */,
 				E17BBE9C23C5B88400003DB8 /* RoundedButton.swift in Sources */,
 				E16ACABA23E9804700AA362A /* FollowersViewModel.swift in Sources */,
+				E1AB279E23ED6D64004BDF15 /* UICollectionView+EmptyState.swift in Sources */,
 				E1B116A823C86B8100ABE5C0 /* UIViewController+Extensions.swift in Sources */,
 				E1B9631823C9CB6900BF73EA /* HTTPClient.swift in Sources */,
 				E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */,
 				E1B116A123C8536B00ABE5C0 /* TitleLabel.swift in Sources */,
 				E1099E4923CC5C38009E7565 /* FollowerEndpoint.swift in Sources */,
 				E1C95FBA23EAB25B0097EA2F /* AvatarImageView+DownloadImage.swift in Sources */,
+				E1AB279C23ED5D7D004BDF15 /* EmptyStateView.swift in Sources */,
 				E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */,
 				E1A14AF923CB07D500CF7903 /* AvatarImageView.swift in Sources */,
 				E1099E4723CC58A9009E7565 /* APIError.swift in Sources */,
