@@ -42,7 +42,8 @@ class FollowersViewController: UIViewController {
   }
   
   private func configureCollectionView() {
-    collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
+    let threeComlumnsFlowLayout = UICollectionViewFlowLayout.createCollectionViewLayout(in: view, padding: 12, minimumItemSpacing: 10, numberOfColumn: 3)
+    collectionView = UICollectionView(frame: .zero, collectionViewLayout: threeComlumnsFlowLayout)
     collectionView.alwaysBounceVertical = true
     collectionView.refreshControl = refreshControl
     collectionView.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
@@ -120,18 +121,6 @@ class FollowersViewController: UIViewController {
     currentSnapshot.appendSections([.main])
     currentSnapshot.appendItems(followers, toSection: .main)
     dataSource.apply(currentSnapshot, animatingDifferences: animated)
-  }
-  
-  private func createCollectionViewLayout() -> UICollectionViewFlowLayout {
-    let width = view.bounds.width
-    let padding: CGFloat = 12
-    let minimumItemSpacing: CGFloat = 10
-    let itemSize = (width - (padding * 2) - (minimumItemSpacing * 2)) / 3
-    
-    let layout = UICollectionViewFlowLayout()
-    layout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-    layout.itemSize = CGSize(width: itemSize, height: itemSize + 40)
-    return layout
   }
 }
 
