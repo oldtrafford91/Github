@@ -107,7 +107,7 @@ class FollowersViewController: UIViewController {
     }
   }
   
-  // MARK: - Helpers
+  // MARK: - Actions
   private func getFollowers() {
     viewModel.getFollowers(of: username)
   }
@@ -126,6 +126,17 @@ class FollowersViewController: UIViewController {
 
 // MARK: - UICollectionView Delegate
 extension FollowersViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let follower = viewModel.followerAt(indexPath: indexPath)
+    
+    let userInfoVC = UserInfoViewController()
+    userInfoVC.username = follower.login
+    let userInfoNC = UINavigationController(rootViewController: userInfoVC)
+    
+    present(userInfoNC, animated: true)
+
+  }
+  
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     let contentHeight = scrollView.contentSize.height
     let scrollViewHeight = scrollView.bounds.height
@@ -144,5 +155,9 @@ extension FollowersViewController: UISearchResultsUpdating, UISearchBarDelegate 
       return
     }
     viewModel.filterUser(using: filter)
+  }
+  
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    viewModel.cancelFiltering()
   }
 }

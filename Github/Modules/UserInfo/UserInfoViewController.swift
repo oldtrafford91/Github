@@ -1,10 +1,11 @@
 import UIKit
 
 class UserInfoViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
+  var username: String!
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    title = username
+    view.backgroundColor = .systemBackground
+  }
+  
 }

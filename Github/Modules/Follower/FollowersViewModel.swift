@@ -7,11 +7,13 @@ class FollowersViewModel {
   
   // MARK: - Properties
   private var username: String = ""
+  private var filteredFollowers: [Follower] = []
   private var followers: [Follower] = [] {
     didSet {
       onFetchedFollowers(followers)
     }
   }
+  private var isFiltering: Bool = false
   private var nextPage: Int = 1
   private var limit: Int = 20
   private var hasMore: Bool = true
@@ -26,7 +28,7 @@ class FollowersViewModel {
   var onFetchFollowersFailed: Observer<APIError> = { _ in }
   var onLoading: Observer<Bool> = { _ in }
   
-  // MARK: - Actions
+  // MARK: - Networking
   func getFollowers(of username: String) {
     self.username = username
     guard hasMore && isLoading == false else { return }
@@ -67,8 +69,9 @@ class FollowersViewModel {
     }
   }
   
+  // MARK: - Filter
   func filterUser(using filter: String) {
-    var filteredFollowers = [Follower]()
+    isFiltering = true
     if filter.count == 0 {
       filteredFollowers = followers
     } else {
@@ -77,5 +80,13 @@ class FollowersViewModel {
       }
     }
     onFilterFollowers(filteredFollowers)
+  }
+  
+  func cancelFiltering() {
+    isFiltering = false
+  }
+  
+  func followerAt(indexPath: IndexPath) -> Follower {
+    return isFiltering ? filteredFollowers[indexPath.row] : followers[indexPath.row]
   }
 }
