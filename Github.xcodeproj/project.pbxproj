@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E1099E4723CC58A9009E7565 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1099E4623CC58A9009E7565 /* APIError.swift */; };
-		E1099E4923CC5C38009E7565 /* FollowerEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1099E4823CC5C38009E7565 /* FollowerEndpoint.swift */; };
+		E1099E4923CC5C38009E7565 /* GithubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1099E4823CC5C38009E7565 /* GithubEndpoint.swift */; };
 		E1366C9623EBEFDA008B2AFB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1366C9523EBEFDA008B2AFB /* LoadingView.swift */; };
 		E13877EF23E8826A00135169 /* FollowerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13877EE23E8826A00135169 /* FollowerServices.swift */; };
 		E1566D5B23C4A7B900E647CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1566D5A23C4A7B900E647CB /* AppDelegate.swift */; };
@@ -31,6 +31,8 @@
 		E1AB279E23ED6D64004BDF15 /* UICollectionView+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB279D23ED6D64004BDF15 /* UICollectionView+EmptyState.swift */; };
 		E1AB27C023EDD1BF004BDF15 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB27BF23EDD1BF004BDF15 /* UserInfoViewController.swift */; };
 		E1AB27C323EDD25E004BDF15 /* UICollectionViewFlowLayout+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB27C223EDD25E004BDF15 /* UICollectionViewFlowLayout+Factory.swift */; };
+		E1AB27C523EDE3B5004BDF15 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB27C423EDE3B5004BDF15 /* UserServices.swift */; };
+		E1AB27C723EDEAC5004BDF15 /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB27C623EDEAC5004BDF15 /* UserInfoViewModel.swift */; };
 		E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */; };
 		E1B116A123C8536B00ABE5C0 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A023C8536B00ABE5C0 /* TitleLabel.swift */; };
 		E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */; };
@@ -46,7 +48,7 @@
 
 /* Begin PBXFileReference section */
 		E1099E4623CC58A9009E7565 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		E1099E4823CC5C38009E7565 /* FollowerEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerEndpoint.swift; sourceTree = "<group>"; };
+		E1099E4823CC5C38009E7565 /* GithubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndpoint.swift; sourceTree = "<group>"; };
 		E1366C9523EBEFDA008B2AFB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E13877EE23E8826A00135169 /* FollowerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerServices.swift; sourceTree = "<group>"; };
 		E1566D5723C4A7B900E647CB /* Github.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Github.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +73,8 @@
 		E1AB279D23ED6D64004BDF15 /* UICollectionView+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+EmptyState.swift"; sourceTree = "<group>"; };
 		E1AB27BF23EDD1BF004BDF15 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		E1AB27C223EDD25E004BDF15 /* UICollectionViewFlowLayout+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout+Factory.swift"; sourceTree = "<group>"; };
+		E1AB27C423EDE3B5004BDF15 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		E1AB27C623EDEAC5004BDF15 /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		E1B1169E23C82D6E00ABE5C0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E1B116A023C8536B00ABE5C0 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		E1B116A223C85A3E00ABE5C0 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				E13877EE23E8826A00135169 /* FollowerServices.swift */,
+				E1AB27C423EDE3B5004BDF15 /* UserServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -135,7 +140,7 @@
 		E16ACABB23E9C98D00AA362A /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
-				E1099E4823CC5C38009E7565 /* FollowerEndpoint.swift */,
+				E1099E4823CC5C38009E7565 /* GithubEndpoint.swift */,
 				E16ACABC23E9C9A700AA362A /* Endpoint.swift */,
 			);
 			path = Endpoint;
@@ -237,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				E1AB27BF23EDD1BF004BDF15 /* UserInfoViewController.swift */,
+				E1AB27C623EDEAC5004BDF15 /* UserInfoViewModel.swift */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 			files = (
 				E1566D6F23C4B4C600E647CB /* SearchViewController.swift in Sources */,
 				E1AB27C023EDD1BF004BDF15 /* UserInfoViewController.swift in Sources */,
+				E1AB27C723EDEAC5004BDF15 /* UserInfoViewModel.swift in Sources */,
 				E1B116AC23C876D300ABE5C0 /* Follower.swift in Sources */,
 				E1C95FB823EAACD20097EA2F /* ImageDownloader.swift in Sources */,
 				E13877EF23E8826A00135169 /* FollowerServices.swift in Sources */,
@@ -397,7 +404,8 @@
 				E1B9631823C9CB6900BF73EA /* HTTPClient.swift in Sources */,
 				E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */,
 				E1B116A123C8536B00ABE5C0 /* TitleLabel.swift in Sources */,
-				E1099E4923CC5C38009E7565 /* FollowerEndpoint.swift in Sources */,
+				E1099E4923CC5C38009E7565 /* GithubEndpoint.swift in Sources */,
+				E1AB27C523EDE3B5004BDF15 /* UserServices.swift in Sources */,
 				E1C95FBA23EAB25B0097EA2F /* AvatarImageView+DownloadImage.swift in Sources */,
 				E1AB279C23ED5D7D004BDF15 /* EmptyStateView.swift in Sources */,
 				E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */,

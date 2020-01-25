@@ -1,14 +1,14 @@
 import Foundation
 
-class FollowerServices {
+class UserServices {
   private let client: HTTPClient
   
   init(client: HTTPClient) {
     self.client = client
   }
   
-  func getFollowers(of user: String, limit: Int = 20, page: Int = 1, completion: @escaping (Result<[Follower], APIError>) -> Void) {
-    let endpoint = GithubEndpoint.getFollower(of: user, limit: limit, page: page)
+  func getUserInfo(of user: String, completion: @escaping (Result<User, APIError>) -> Void) {
+    let endpoint = GithubEndpoint.getUserInfo(of: user)
     guard let urlRequest = endpoint.urlRequest else { return }
     client.request(urlRequest, completion: JSONMapper.map(completion: completion))
   }
