@@ -13,9 +13,9 @@ extension UIViewController {
 
 // MARK: - Child View Controller
 extension UIViewController {
-    func add(_ child: UIViewController) {
+  func add(_ child: UIViewController, in containerView: UIView) {
         addChild(child)
-        view.addSubview(child.view)
+        containerView.addSubview(child.view)
         child.didMove(toParent: self)
     }
 
