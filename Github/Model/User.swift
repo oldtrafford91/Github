@@ -8,7 +8,7 @@ struct User: Codable {
   let bio: String?
   let publicRepos: Int
   let publicGists: Int
-  let htmlUrl: String
+  let htmlUrl: URL
   let following: Int
   let followers: Int
   let createdAt: Date
