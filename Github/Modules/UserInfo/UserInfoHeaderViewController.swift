@@ -1,9 +1,16 @@
-//
-//  UserInfoHeaderViewController.swift
-//  Github
-//
-//  Created by Tran Tuan Hai on 2/8/20.
-//  Copyright © 2020 Tran Tuan Hai. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class UserInfoHeaderViewController: UIViewController {
+  // MARK: - Properties
+  let avatarImageView = AvatarImageView()
+  let usernameLabel = TitleLabel(textAlignment: .left, fontSize: 34)
+  let nameLabel = SecondaryTitleLabel(fontSize: 18)
+  
+  
+  // MARK: - View Life Cycle
+  
+  // MARK: - Configure
+  
+  
+  
+}
