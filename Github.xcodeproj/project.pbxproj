@@ -133,6 +133,7 @@
 			children = (
 				E1B9631423C9C75C00BF73EA /* App */,
 				E1B116AA23C876BE00ABE5C0 /* Model */,
+				E13877ED23E8825000135169 /* Services */,
 				E1B9631623C9CA4100BF73EA /* Networking */,
 				E1B9631223C9C73000BF73EA /* Modules */,
 				E1B9631523C9C76F00BF73EA /* Shared */,
@@ -316,7 +317,6 @@
 			isa = PBXGroup;
 			children = (
 				E16ACABB23E9C98D00AA362A /* Endpoint */,
-				E13877ED23E8825000135169 /* Services */,
 				E1B9631723C9CB6900BF73EA /* HTTPClient.swift */,
 				E16ACAB723E9567800AA362A /* JSONMapper.swift */,
 				E1099E4623CC58A9009E7565 /* APIError.swift */,
