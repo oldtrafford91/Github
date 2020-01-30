@@ -8,6 +8,9 @@ class UserInfoViewController: UIViewController {
   let headerView = UIView()
   let headerVC = UserInfoHeaderViewController()
   
+  // MARK: Constraints
+  var headerViewHeightConstraint: NSLayoutConstraint!
+  
   // MARK: Dependencies
   let viewModel = UserInfoViewModel()
   
@@ -35,12 +38,15 @@ class UserInfoViewController: UIViewController {
   private func configureHeaderView() {
     headerView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(headerView)
-    
+
+    headerViewHeightConstraint = headerView.heightAnchor.constraint(equalToConstant: 200)
+    headerViewHeightConstraint.priority = .init(rawValue: 750)
     NSLayoutConstraint.activate([
       headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       headerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
       headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      headerView.heightAnchor.constraint(equalToConstant: 200)
+      headerView.heightAnchor.constraint(lessThanOrEqualTo: view.heightAnchor, multiplier: 0.25),
+      headerViewHeightConstraint
     ])
     add(headerVC, in: headerView)
   }
@@ -64,5 +70,14 @@ class UserInfoViewController: UIViewController {
   // MARK: Actions
   private func getUserInfo() {
     viewModel.getUserInfo(username: username)
+  }
+}
+
+extension UserInfoViewController {
+  override func preferredContentSizeDidChange(forChildContentContainer container: UIContentContainer) {
+    super.preferredContentSizeDidChange(forChildContentContainer: container)
+    if (container as? UserInfoHeaderViewController) != nil {
+      headerViewHeightConstraint.constant = container.preferredContentSize.height
+    }
   }
 }

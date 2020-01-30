@@ -93,7 +93,7 @@ class UserInfoHeaderViewController: UIViewController {
       bioLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 12),
       bioLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
       bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-      bioLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+      bioLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
   }
   
@@ -107,5 +107,15 @@ class UserInfoHeaderViewController: UIViewController {
       self.bioLabel.text = user.bio
     }
   }
+}
+
+extension UserInfoHeaderViewController {
+  private func calculatePreferredSize() {
+      let targetSize = CGSize(width: view.bounds.width, height: UIView.layoutFittingCompressedSize.height)
+      preferredContentSize = view.systemLayoutSizeFitting(targetSize)
+  }
   
+  override func viewDidLayoutSubviews() {
+    calculatePreferredSize()
+  }
 }
