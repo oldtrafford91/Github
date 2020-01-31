@@ -2,9 +2,9 @@ import UIKit
 
 class UserInfoHeaderViewController: UIViewController {
   // MARK: Properties
-  var user: User! {
+  var viewModel: UserInfoHeaderViewModel! {
     didSet {
-      configure(with: user)
+      configure(with: viewModel)
     }
   }
   
@@ -97,14 +97,14 @@ class UserInfoHeaderViewController: UIViewController {
     ])
   }
   
-  private func configure(with user: User) {
+  private func configure(with viewModel: UserInfoHeaderViewModel) {
     DispatchQueue.main.async {
-      self.avatarImageView.setImage(with: user.avatarUrl)
-      self.usernameLabel.text = user.login
-      self.nameLabel.text = user.name
-      self.locationImageView.image = UIImage(systemName: "mappin.and.ellipse")
-      self.locationLabel.text = user.location
-      self.bioLabel.text = user.bio
+      self.avatarImageView.setImage(with: viewModel.avatarURL)
+      self.usernameLabel.text = viewModel.username
+      self.nameLabel.text = viewModel.name
+      self.locationImageView.image = viewModel.locationImage
+      self.locationLabel.text = viewModel.location
+      self.bioLabel.text = viewModel.bio
     }
   }
 }

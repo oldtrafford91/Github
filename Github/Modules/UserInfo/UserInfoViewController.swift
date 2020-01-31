@@ -5,7 +5,7 @@ class UserInfoViewController: UIViewController {
   var username: String!
   
   // MARK: Views
-  let headerView = UIView()
+  let headerViewContainer = UIView()
   let headerVC = UserInfoHeaderViewController()
   
   // MARK: Constraints
@@ -36,25 +36,25 @@ class UserInfoViewController: UIViewController {
   }
   
   private func configureHeaderView() {
-    headerView.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(headerView)
+    headerViewContainer.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(headerViewContainer)
 
-    headerViewHeightConstraint = headerView.heightAnchor.constraint(equalToConstant: 200)
+    headerViewHeightConstraint = headerViewContainer.heightAnchor.constraint(equalToConstant: 200)
     headerViewHeightConstraint.priority = .init(rawValue: 750)
     NSLayoutConstraint.activate([
-      headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      headerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-      headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      headerView.heightAnchor.constraint(lessThanOrEqualTo: view.heightAnchor, multiplier: 0.25),
+      headerViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      headerViewContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      headerViewContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      headerViewContainer.heightAnchor.constraint(lessThanOrEqualTo: view.heightAnchor, multiplier: 0.25),
       headerViewHeightConstraint
     ])
-    add(headerVC, in: headerView)
+    add(headerVC, in: headerViewContainer)
   }
   
   private func configureViewModelBinding() {
     viewModel.onFetchedUser = { [weak self] user in
       guard let self = self else { return }
-      self.headerVC.user = user
+      self.headerVC.viewModel = UserInfoHeaderViewModel(user: user)
     }
     viewModel.onFetchedUserFailed = { [weak self] error in
       guard let self = self else { return }
