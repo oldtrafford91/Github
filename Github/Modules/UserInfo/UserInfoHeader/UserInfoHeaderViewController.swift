@@ -2,7 +2,7 @@ import UIKit
 
 class UserInfoHeaderViewController: UIViewController {
   // MARK: Properties
-  var viewModel: UserInfoHeaderViewModel! {
+  var viewModel: UserRepresentable! {
     didSet {
       configure(with: viewModel)
     }
@@ -97,7 +97,7 @@ class UserInfoHeaderViewController: UIViewController {
     ])
   }
   
-  private func configure(with viewModel: UserInfoHeaderViewModel) {
+  private func configure(with viewModel: UserRepresentable) {
     DispatchQueue.main.async {
       self.avatarImageView.setImage(with: viewModel.avatarURL)
       self.usernameLabel.text = viewModel.username

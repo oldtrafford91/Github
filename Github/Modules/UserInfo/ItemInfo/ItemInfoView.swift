@@ -56,7 +56,7 @@ class ItemInfoView: UIView {
     ])
   }
   
-  private func configure(with type: ItemInfoType, count: Int) {
+  func configure(with type: ItemInfoType, count: Int) {
     switch type {
     case .follower:
       itemImageView.image = UIImage(systemName: "heart")

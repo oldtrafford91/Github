@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E1099E4723CC58A9009E7565 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1099E4623CC58A9009E7565 /* APIError.swift */; };
 		E1099E4923CC5C38009E7565 /* GithubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1099E4823CC5C38009E7565 /* GithubEndpoint.swift */; };
-		E135035423EFD89E008CE193 /* UserInfoHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135035323EFD89E008CE193 /* UserInfoHeaderViewModel.swift */; };
 		E135035823EFDD70008CE193 /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135035723EFDD70008CE193 /* ItemInfoViewController.swift */; };
 		E135035A23EFDDA8008CE193 /* ReposInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135035923EFDDA8008CE193 /* ReposInfoViewController.swift */; };
 		E135035C23EFDDD5008CE193 /* FollowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135035B23EFDDD5008CE193 /* FollowInfoViewController.swift */; };
@@ -56,7 +55,6 @@
 /* Begin PBXFileReference section */
 		E1099E4623CC58A9009E7565 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		E1099E4823CC5C38009E7565 /* GithubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndpoint.swift; sourceTree = "<group>"; };
-		E135035323EFD89E008CE193 /* UserInfoHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderViewModel.swift; sourceTree = "<group>"; };
 		E135035723EFDD70008CE193 /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
 		E135035923EFDDA8008CE193 /* ReposInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposInfoViewController.swift; sourceTree = "<group>"; };
 		E135035B23EFDDD5008CE193 /* FollowInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowInfoViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				E17F129923EE9ACB00847F45 /* UserInfoHeaderViewController.swift */,
-				E135035323EFD89E008CE193 /* UserInfoHeaderViewModel.swift */,
 			);
 			path = UserInfoHeader;
 			sourceTree = "<group>";
@@ -440,7 +437,6 @@
 				E1AB279E23ED6D64004BDF15 /* UICollectionView+EmptyState.swift in Sources */,
 				E1B116A823C86B8100ABE5C0 /* UIViewController+Extensions.swift in Sources */,
 				E1B9631823C9CB6900BF73EA /* HTTPClient.swift in Sources */,
-				E135035423EFD89E008CE193 /* UserInfoHeaderViewModel.swift in Sources */,
 				E1B1169F23C82D6E00ABE5C0 /* String+Extensions.swift in Sources */,
 				E1B116A123C8536B00ABE5C0 /* TitleLabel.swift in Sources */,
 				E1099E4923CC5C38009E7565 /* GithubEndpoint.swift in Sources */,

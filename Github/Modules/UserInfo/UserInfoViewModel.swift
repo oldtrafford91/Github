@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class UserInfoViewModel {
   typealias Observer<T> = (T) -> Void
@@ -7,11 +7,8 @@ class UserInfoViewModel {
   let userServices = UserServices(client: URLSessionHTTPClient())
   
   // MARK: Properties
-  private var user: User? {
-    didSet {
-      guard let user = user else { return }
-      onFetchedUser(user)
-    }
+  private var user: User! {
+    didSet { onFetchedUser(user) }
   }
   
   var onFetchedUser: Observer<User> = { _ in }
@@ -29,5 +26,30 @@ class UserInfoViewModel {
       }
     }
   }
-  
+}
+
+protocol UserRepresentable {
+  var avatarURL: URL { get}
+  var username: String { get }
+  var name: String? { get }
+  var location: String? { get }
+  var locationImage: UIImage { get }
+  var bio: String? { get }
+  var publicRepos: Int { get }
+  var publicGists: Int { get }
+  var followers: Int { get }
+  var following: Int { get }
+}
+
+extension UserInfoViewModel: UserRepresentable {
+  var avatarURL: URL { return user.avatarUrl }
+  var username: String { return user.login }
+  var name: String? { return user.name }
+  var location: String? { return user.location }
+  var locationImage: UIImage { return UIImage(systemName: "mappin.and.ellipse")!}
+  var bio: String? { return user.bio }
+  var publicRepos: Int { return user.publicRepos }
+  var publicGists: Int { return user.publicGists }
+  var followers: Int { return user.followers }
+  var following: Int { return user.following }
 }

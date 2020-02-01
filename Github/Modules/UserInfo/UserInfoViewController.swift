@@ -8,8 +8,9 @@ class UserInfoViewController: UIViewController {
   let headerViewContainer = UIView()
   let headerVC = UserInfoHeaderViewController()
   let reposInfoViewContainer = UIView()
-  
+  let reposInfoVC = ReposInfoViewController()
   let followInfoViewContainer = UIView()
+  let followInfoVC = FollowInfoViewController()
   
   // MARK: Constraints
   var headerViewHeightConstraint: NSLayoutConstraint!
@@ -28,8 +29,10 @@ class UserInfoViewController: UIViewController {
   // MARK: - Configure
   private func configureViewHierachy() {
     view.backgroundColor = .systemBackground
+    addSubviews()
     configureNavigationBar()
     configureHeaderView()
+    layoutUI()
   }
   
   private func configureNavigationBar() {
@@ -39,19 +42,7 @@ class UserInfoViewController: UIViewController {
   }
   
   private func configureHeaderView() {
-    headerViewContainer.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(headerViewContainer)
-
-    headerViewHeightConstraint = headerViewContainer.heightAnchor.constraint(equalToConstant: 200)
-    headerViewHeightConstraint.priority = .init(rawValue: 750)
-    NSLayoutConstraint.activate([
-      headerViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      headerViewContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-      headerViewContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      headerViewContainer.heightAnchor.constraint(lessThanOrEqualTo: view.heightAnchor, multiplier: 0.25),
-      headerViewHeightConstraint
-    ])
-    add(headerVC, in: headerViewContainer)
+    
   }
   
   private func configureReposInfoViewContainer() {
@@ -62,15 +53,57 @@ class UserInfoViewController: UIViewController {
     
   }
   
+  private func addSubviews() {
+    view.addSubview(headerViewContainer)
+    view.addSubview(reposInfoViewContainer)
+    view.addSubview(followInfoViewContainer)
+  }
+  
   private func configureViewModelBinding() {
     viewModel.onFetchedUser = { [weak self] user in
       guard let self = self else { return }
-      self.headerVC.viewModel = UserInfoHeaderViewModel(user: user)
+      DispatchQueue.main.async {
+        self.headerVC.viewModel = self.viewModel
+        self.followInfoVC.viewModel = self.viewModel
+        self.reposInfoVC.viewModel = self.viewModel
+      }
     }
     viewModel.onFetchedUserFailed = { [weak self] error in
       guard let self = self else { return }
       self.showAlertOnMainThread(title: "Something wrong", message: error.localizedDescription, buttonTitle: "OK")
     }
+  }
+  
+  private func layoutUI() {
+    let padding: CGFloat = 20
+    headerViewContainer.translatesAutoresizingMaskIntoConstraints = false
+    headerViewHeightConstraint = headerViewContainer.heightAnchor.constraint(equalToConstant: 200)
+    headerViewHeightConstraint.priority = .init(rawValue: 750)
+    
+    followInfoViewContainer.translatesAutoresizingMaskIntoConstraints = false
+    reposInfoViewContainer.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      headerViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      headerViewContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      headerViewContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      headerViewContainer.heightAnchor.constraint(lessThanOrEqualTo: view.heightAnchor, multiplier: 0.25),
+      headerViewHeightConstraint,
+      
+      reposInfoViewContainer.topAnchor.constraint(equalTo: headerViewContainer.bottomAnchor, constant: padding),
+      reposInfoViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+      reposInfoViewContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+      reposInfoViewContainer.heightAnchor.constraint(equalToConstant: 140),
+      
+      followInfoViewContainer.topAnchor.constraint(equalTo: reposInfoViewContainer.bottomAnchor, constant: padding),
+      followInfoViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+      followInfoViewContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+      followInfoViewContainer.heightAnchor.constraint(equalToConstant: 140)
+    ])
+    add(headerVC, in: headerViewContainer)
+    add(reposInfoVC, in: reposInfoViewContainer)
+    add(followInfoVC, in: followInfoViewContainer)
+    
+    
   }
   
   // MARK: Event Handler

@@ -38,7 +38,7 @@ class SearchViewController: UIViewController {
   
   //MARK: - Helpers
   private func pushFollowersViewController() {
-    guard let username = validUserName() else {
+    guard let username = validateUserName() else {
       showAlertOnMainThread(title: "Wrong Username", message: "User name is empty", buttonTitle: "OK")
       return
     }
@@ -47,7 +47,7 @@ class SearchViewController: UIViewController {
     navigationController?.pushViewController(followersViewController, animated: true)
   }
   
-  private func validUserName() -> String? {
+  private func validateUserName() -> String? {
     guard let username = usernameTextField.text else { return nil}
     guard !username.isEmpty else { return nil}
     return username
