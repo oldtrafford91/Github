@@ -7,6 +7,9 @@ class UserInfoViewController: UIViewController {
   // MARK: Views
   let headerViewContainer = UIView()
   let headerVC = UserInfoHeaderViewController()
+  let reposInfoViewContainer = UIView()
+  
+  let followInfoViewContainer = UIView()
   
   // MARK: Constraints
   var headerViewHeightConstraint: NSLayoutConstraint!
@@ -49,6 +52,14 @@ class UserInfoViewController: UIViewController {
       headerViewHeightConstraint
     ])
     add(headerVC, in: headerViewContainer)
+  }
+  
+  private func configureReposInfoViewContainer() {
+    
+  }
+  
+  private func configureFollowInfoViewContainer() {
+    
   }
   
   private func configureViewModelBinding() {

@@ -10,6 +10,10 @@
 		E1099E4723CC58A9009E7565 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1099E4623CC58A9009E7565 /* APIError.swift */; };
 		E1099E4923CC5C38009E7565 /* GithubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1099E4823CC5C38009E7565 /* GithubEndpoint.swift */; };
 		E135035423EFD89E008CE193 /* UserInfoHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135035323EFD89E008CE193 /* UserInfoHeaderViewModel.swift */; };
+		E135035823EFDD70008CE193 /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135035723EFDD70008CE193 /* ItemInfoViewController.swift */; };
+		E135035A23EFDDA8008CE193 /* ReposInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135035923EFDDA8008CE193 /* ReposInfoViewController.swift */; };
+		E135035C23EFDDD5008CE193 /* FollowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135035B23EFDDD5008CE193 /* FollowInfoViewController.swift */; };
+		E135035E23EFDE0D008CE193 /* ItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135035D23EFDE0D008CE193 /* ItemInfoView.swift */; };
 		E1366C9623EBEFDA008B2AFB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1366C9523EBEFDA008B2AFB /* LoadingView.swift */; };
 		E13877EF23E8826A00135169 /* FollowerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13877EE23E8826A00135169 /* FollowerServices.swift */; };
 		E1566D5B23C4A7B900E647CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1566D5A23C4A7B900E647CB /* AppDelegate.swift */; };
@@ -53,6 +57,10 @@
 		E1099E4623CC58A9009E7565 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		E1099E4823CC5C38009E7565 /* GithubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndpoint.swift; sourceTree = "<group>"; };
 		E135035323EFD89E008CE193 /* UserInfoHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderViewModel.swift; sourceTree = "<group>"; };
+		E135035723EFDD70008CE193 /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
+		E135035923EFDDA8008CE193 /* ReposInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposInfoViewController.swift; sourceTree = "<group>"; };
+		E135035B23EFDDD5008CE193 /* FollowInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowInfoViewController.swift; sourceTree = "<group>"; };
+		E135035D23EFDE0D008CE193 /* ItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoView.swift; sourceTree = "<group>"; };
 		E1366C9523EBEFDA008B2AFB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E13877EE23E8826A00135169 /* FollowerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerServices.swift; sourceTree = "<group>"; };
 		E1566D5723C4A7B900E647CB /* Github.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Github.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +120,17 @@
 				E135035323EFD89E008CE193 /* UserInfoHeaderViewModel.swift */,
 			);
 			path = UserInfoHeader;
+			sourceTree = "<group>";
+		};
+		E135035623EFDD42008CE193 /* ItemInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E135035723EFDD70008CE193 /* ItemInfoViewController.swift */,
+				E135035923EFDDA8008CE193 /* ReposInfoViewController.swift */,
+				E135035B23EFDDD5008CE193 /* FollowInfoViewController.swift */,
+				E135035D23EFDE0D008CE193 /* ItemInfoView.swift */,
+			);
+			path = ItemInfo;
 			sourceTree = "<group>";
 		};
 		E13877ED23E8825000135169 /* Services */ = {
@@ -261,6 +280,7 @@
 				E1AB27BF23EDD1BF004BDF15 /* UserInfoViewController.swift */,
 				E1AB27C623EDEAC5004BDF15 /* UserInfoViewModel.swift */,
 				E135035523EFDC03008CE193 /* UserInfoHeader */,
+				E135035623EFDD42008CE193 /* ItemInfo */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -412,6 +432,7 @@
 				E1AB27C723EDEAC5004BDF15 /* UserInfoViewModel.swift in Sources */,
 				E1B116AC23C876D300ABE5C0 /* Follower.swift in Sources */,
 				E1C95FB823EAACD20097EA2F /* ImageDownloader.swift in Sources */,
+				E135035E23EFDE0D008CE193 /* ItemInfoView.swift in Sources */,
 				E13877EF23E8826A00135169 /* FollowerServices.swift in Sources */,
 				E17BBE9C23C5B88400003DB8 /* RoundedButton.swift in Sources */,
 				E16ACABA23E9804700AA362A /* FollowersViewModel.swift in Sources */,
@@ -426,6 +447,9 @@
 				E1AB27C523EDE3B5004BDF15 /* UserServices.swift in Sources */,
 				E1C95FBA23EAB25B0097EA2F /* AvatarImageView+DownloadImage.swift in Sources */,
 				E17F129A23EE9ACB00847F45 /* UserInfoHeaderViewController.swift in Sources */,
+				E135035823EFDD70008CE193 /* ItemInfoViewController.swift in Sources */,
+				E135035A23EFDDA8008CE193 /* ReposInfoViewController.swift in Sources */,
+				E135035C23EFDDD5008CE193 /* FollowInfoViewController.swift in Sources */,
 				E1AB279C23ED5D7D004BDF15 /* EmptyStateView.swift in Sources */,
 				E1B116A323C85A3E00ABE5C0 /* BodyLabel.swift in Sources */,
 				E1A14AF923CB07D500CF7903 /* AvatarImageView.swift in Sources */,
