@@ -31,7 +31,6 @@ class UserInfoViewController: UIViewController {
     view.backgroundColor = .systemBackground
     addSubviews()
     configureNavigationBar()
-    configureHeaderView()
     layoutUI()
   }
   
@@ -40,25 +39,7 @@ class UserInfoViewController: UIViewController {
     let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
     navigationItem.rightBarButtonItem = doneButton
   }
-  
-  private func configureHeaderView() {
-    
-  }
-  
-  private func configureReposInfoViewContainer() {
-    
-  }
-  
-  private func configureFollowInfoViewContainer() {
-    
-  }
-  
-  private func addSubviews() {
-    view.addSubview(headerViewContainer)
-    view.addSubview(reposInfoViewContainer)
-    view.addSubview(followInfoViewContainer)
-  }
-  
+
   private func configureViewModelBinding() {
     viewModel.onFetchedUser = { [weak self] user in
       guard let self = self else { return }
@@ -74,6 +55,15 @@ class UserInfoViewController: UIViewController {
     }
   }
   
+  private func addSubviews() {
+    view.addSubview(headerViewContainer)
+    view.addSubview(reposInfoViewContainer)
+    view.addSubview(followInfoViewContainer)
+    add(headerVC, in: headerViewContainer)
+    add(reposInfoVC, in: reposInfoViewContainer)
+    add(followInfoVC, in: followInfoViewContainer)
+  }
+  
   private func layoutUI() {
     let padding: CGFloat = 20
     headerViewContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -82,6 +72,7 @@ class UserInfoViewController: UIViewController {
     
     followInfoViewContainer.translatesAutoresizingMaskIntoConstraints = false
     reposInfoViewContainer.translatesAutoresizingMaskIntoConstraints = false
+    
     NSLayoutConstraint.activate([
       headerViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       headerViewContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -99,11 +90,6 @@ class UserInfoViewController: UIViewController {
       followInfoViewContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
       followInfoViewContainer.heightAnchor.constraint(equalToConstant: 140)
     ])
-    add(headerVC, in: headerViewContainer)
-    add(reposInfoVC, in: reposInfoViewContainer)
-    add(followInfoVC, in: followInfoViewContainer)
-    
-    
   }
   
   // MARK: Event Handler
