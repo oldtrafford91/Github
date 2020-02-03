@@ -1,21 +1,22 @@
 import UIKit
 
 class UserInfoViewController: UIViewController {
-  // MARK: Properties
+  // MARK: - Properties
   var username: String!
   
-  // MARK: Views
+  // MARK: - Views
   let headerViewContainer = UIView()
   let headerVC = UserInfoHeaderViewController()
   let reposInfoViewContainer = UIView()
   let reposInfoVC = ReposInfoViewController()
   let followInfoViewContainer = UIView()
   let followInfoVC = FollowInfoViewController()
+  let joinedDateLabel = BodyLabel(textAlignment: .center)
   
-  // MARK: Constraints
+  // MARK: - Constraints
   var headerViewHeightConstraint: NSLayoutConstraint!
   
-  // MARK: Dependencies
+  // MARK: - Dependencies
   let viewModel = UserInfoViewModel()
   
   // MARK: - View Life Cycle
@@ -41,12 +42,10 @@ class UserInfoViewController: UIViewController {
   }
 
   private func configureViewModelBinding() {
-    viewModel.onFetchedUser = { [weak self] user in
+    viewModel.onFetchedUser = { [weak self] _ in
       guard let self = self else { return }
       DispatchQueue.main.async {
-        self.headerVC.viewModel = self.viewModel
-        self.followInfoVC.viewModel = self.viewModel
-        self.reposInfoVC.viewModel = self.viewModel
+        self.configure(with: self.viewModel)
       }
     }
     viewModel.onFetchedUserFailed = { [weak self] error in
@@ -55,10 +54,18 @@ class UserInfoViewController: UIViewController {
     }
   }
   
+  private func configure(with viewModel: UserRepresentable) {
+    self.headerVC.viewModel = self.viewModel
+    self.followInfoVC.viewModel = self.viewModel
+    self.reposInfoVC.viewModel = self.viewModel
+    joinedDateLabel.text = viewModel.joinedDate
+  }
+  
   private func addSubviews() {
     view.addSubview(headerViewContainer)
     view.addSubview(reposInfoViewContainer)
     view.addSubview(followInfoViewContainer)
+    view.addSubview(joinedDateLabel)
     add(headerVC, in: headerViewContainer)
     add(reposInfoVC, in: reposInfoViewContainer)
     add(followInfoVC, in: followInfoViewContainer)
@@ -72,6 +79,7 @@ class UserInfoViewController: UIViewController {
     
     followInfoViewContainer.translatesAutoresizingMaskIntoConstraints = false
     reposInfoViewContainer.translatesAutoresizingMaskIntoConstraints = false
+    joinedDateLabel.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
       headerViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -88,21 +96,27 @@ class UserInfoViewController: UIViewController {
       followInfoViewContainer.topAnchor.constraint(equalTo: reposInfoViewContainer.bottomAnchor, constant: padding),
       followInfoViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
       followInfoViewContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-      followInfoViewContainer.heightAnchor.constraint(equalToConstant: 140)
+      followInfoViewContainer.heightAnchor.constraint(equalToConstant: 140),
+      
+      joinedDateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+      joinedDateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+      joinedDateLabel.topAnchor.constraint(equalTo: followInfoViewContainer.bottomAnchor, constant: padding),
+      joinedDateLabel.heightAnchor.constraint(equalToConstant: 18)
     ])
   }
   
-  // MARK: Event Handler
+  // MARK: - Event Handler
   @objc private func dismissVC() {
     dismiss(animated: true)
   }
   
-  // MARK: Actions
+  // MARK: - Actions
   private func getUserInfo() {
     viewModel.getUserInfo(username: username)
   }
 }
 
+// MARK: -
 extension UserInfoViewController {
   override func preferredContentSizeDidChange(forChildContentContainer container: UIContentContainer) {
     super.preferredContentSizeDidChange(forChildContentContainer: container)

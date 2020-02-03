@@ -11,4 +11,3 @@ class FollowInfoViewController: ItemInfoViewController {
     rightItemInfoView.configure(with: .following, count: viewModel.following)
   }
 }
-

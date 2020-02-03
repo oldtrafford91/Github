@@ -39,6 +39,7 @@ protocol UserRepresentable {
   var publicGists: Int { get }
   var followers: Int { get }
   var following: Int { get }
+  var joinedDate: String { get }
 }
 
 extension UserInfoViewModel: UserRepresentable {
@@ -52,4 +53,7 @@ extension UserInfoViewModel: UserRepresentable {
   var publicGists: Int { return user.publicGists }
   var followers: Int { return user.followers }
   var following: Int { return user.following }
+  var joinedDate: String {
+    return "Joined Github since " + user.createdAt.convertToMonthYearFormat()
+  }
 }

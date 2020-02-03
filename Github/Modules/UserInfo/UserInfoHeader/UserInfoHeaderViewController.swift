@@ -3,9 +3,7 @@ import UIKit
 class UserInfoHeaderViewController: UIViewController {
   // MARK: Properties
   var viewModel: UserRepresentable! {
-    didSet {
-      configure(with: viewModel)
-    }
+    didSet { configure(with: viewModel) }
   }
   
   // MARK: - Views
