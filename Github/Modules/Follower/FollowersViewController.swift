@@ -6,12 +6,15 @@ class FollowersViewController: UIViewController {
   }
   
   // MARK: - Properties
-  var username: String!
+  var username: String! { didSet { viewModel.username = username } }
   var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
   var currentSnapshot: NSDiffableDataSourceSnapshot<Section, Follower>!
   
   // MARK: - Dependencies
-  let viewModel = FollowersViewModel()
+  lazy var viewModel: FollowersViewModel = {
+    let viewModel = FollowersViewModel()
+    return viewModel
+  }()
   
   // MARK: - Views
   var collectionView: UICollectionView!
@@ -25,7 +28,7 @@ class FollowersViewController: UIViewController {
     configureHierachy()
     getFollowers()
   }
-  
+
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(false, animated: true)
@@ -33,7 +36,7 @@ class FollowersViewController: UIViewController {
   
   // MARK: - Setup
   private func configureHierachy() {
-    title = username
+    title = viewModel.username
     view.backgroundColor = .systemBackground
     navigationController?.navigationBar.prefersLargeTitles = true
     configureCollectionView()
@@ -77,6 +80,11 @@ class FollowersViewController: UIViewController {
   }
   
   private func configureViewModelBinding() {
+    viewModel.onUsernameChanged = { [weak self] username in
+      guard let self = self else { return }
+      self.title = username
+      self.collectionView.setContentOffset(.zero, animated: true)
+    }
     viewModel.onFetchedFollowers = { [weak self] followers in
       guard let self = self else { return }
       if followers.count == 0 {
@@ -109,11 +117,11 @@ class FollowersViewController: UIViewController {
   
   // MARK: - Actions
   private func getFollowers() {
-    viewModel.getFollowers(of: username)
+    viewModel.getFollowers(of: viewModel.username)
   }
   
   @objc private func reloadData() {
-    viewModel.reload()
+    viewModel.reloadData(of: viewModel.username)
   }
   
   private func updateData(with followers: [Follower], animated: Bool = true) {
@@ -131,10 +139,9 @@ extension FollowersViewController: UICollectionViewDelegate {
     
     let userInfoVC = UserInfoViewController()
     userInfoVC.username = follower.login
+    userInfoVC.delegate = self
     let userInfoNC = UINavigationController(rootViewController: userInfoVC)
-    
-    present(userInfoNC, animated: true)
-
+    show(userInfoNC, sender: self)
   }
   
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -159,5 +166,13 @@ extension FollowersViewController: UISearchResultsUpdating, UISearchBarDelegate 
   
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
     viewModel.cancelFiltering()
+  }
+}
+
+// MARK: - UserInfoViewControllerDelegate
+extension FollowersViewController: UserInfoViewControllerDelegate {
+  func userInfoViewControllerDidRequestFollowers(of username: String) {
+    self.username = username
+    reloadData()
   }
 }

@@ -1,20 +1,26 @@
 import UIKit
+import SafariServices
+
+protocol UserInfoViewControllerDelegate: class {
+  func userInfoViewControllerDidRequestFollowers(of username: String)
+}
 
 class UserInfoViewController: UIViewController {
   // MARK: - Properties
   var username: String!
+  weak var delegate: UserInfoViewControllerDelegate?
   
   // MARK: - Views
-  let headerViewContainer = UIView()
-  let headerVC = UserInfoHeaderViewController()
-  let reposInfoViewContainer = UIView()
-  let reposInfoVC = ReposInfoViewController()
-  let followInfoViewContainer = UIView()
-  let followInfoVC = FollowInfoViewController()
-  let joinedDateLabel = BodyLabel(textAlignment: .center)
+  private let headerViewContainer = UIView()
+  private let headerVC = UserInfoHeaderViewController()
+  private let reposInfoViewContainer = UIView()
+  private let reposInfoVC = ReposInfoViewController()
+  private let followInfoViewContainer = UIView()
+  private let followInfoVC = FollowInfoViewController()
+  private let joinedDateLabel = BodyLabel(textAlignment: .center)
   
   // MARK: - Constraints
-  var headerViewHeightConstraint: NSLayoutConstraint!
+  private var headerViewHeightConstraint: NSLayoutConstraint!
   
   // MARK: - Dependencies
   let viewModel = UserInfoViewModel()
@@ -55,10 +61,12 @@ class UserInfoViewController: UIViewController {
   }
   
   private func configure(with viewModel: UserRepresentable) {
-    self.headerVC.viewModel = self.viewModel
-    self.followInfoVC.viewModel = self.viewModel
-    self.reposInfoVC.viewModel = self.viewModel
+    headerVC.viewModel = viewModel
+    followInfoVC.viewModel = viewModel
+    reposInfoVC.viewModel = viewModel
     joinedDateLabel.text = viewModel.joinedDate
+    followInfoVC.delegate = self
+    reposInfoVC.delegate = self
   }
   
   private func addSubviews() {
@@ -123,5 +131,20 @@ extension UserInfoViewController {
     if (container as? UserInfoHeaderViewController) != nil {
       headerViewHeightConstraint.constant = container.preferredContentSize.height
     }
+  }
+}
+
+extension UserInfoViewController: ReposInfoViewControllerDelegate {
+  func reposInfoViewControllerDidTapGithubProfileButton(controller: ReposInfoViewController) {
+    let safariVC = SFSafariViewController(url: controller.viewModel.profileURL)
+    safariVC.preferredControlTintColor = .systemGreen
+    present(safariVC, animated: true)
+  }
+}
+
+extension UserInfoViewController: FollowInfoViewControllerDelegate {
+  func followInfoViewControllerDidTapGetFollowersButton(controller: FollowInfoViewController) {
+    delegate?.userInfoViewControllerDidRequestFollowers(of: controller.viewModel.username)
+    dismiss(animated: true)
   }
 }
