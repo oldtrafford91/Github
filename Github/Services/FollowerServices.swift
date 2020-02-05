@@ -8,7 +8,7 @@ class FollowerServices {
   }
   
   func getFollowers(of user: String, limit: Int = 20, page: Int = 1, completion: @escaping (Result<[Follower], APIError>) -> Void) {
-    let endpoint = GithubEndpoint.getFollower(of: user, limit: limit, page: page)
+    let endpoint = GithubEndpoint.getFollowers(username: user, limit: limit, page: page)
     guard let urlRequest = endpoint.urlRequest else { return }
     client.request(urlRequest, completion: JSONMapper.map(completion: completion))
   }

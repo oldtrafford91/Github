@@ -1,7 +1,7 @@
 import UIKit
 
 extension UIViewController {
-  func showAlertOnMainThread(title: String, message: String, buttonTitle: String) {
+  func showAlert(title: String, message: String, buttonTitle: String) {
     DispatchQueue.main.async {
       let alertViewController = AlertViewController(alertTitle: title, message: message, buttonTitle: buttonTitle)
       alertViewController.modalPresentationStyle = .overFullScreen

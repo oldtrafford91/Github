@@ -8,7 +8,7 @@ class UserServices {
   }
   
   func getUserInfo(of user: String, completion: @escaping (Result<User, APIError>) -> Void) {
-    let endpoint = GithubEndpoint.getUserInfo(of: user)
+    let endpoint = GithubEndpoint.getUserInfo(username: user)
     guard let urlRequest = endpoint.urlRequest else { return }
     client.request(urlRequest, completion: JSONMapper.map(completion: completion))
   }
