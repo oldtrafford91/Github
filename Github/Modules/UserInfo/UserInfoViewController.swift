@@ -56,7 +56,7 @@ class UserInfoViewController: UIViewController {
     }
     viewModel.onFetchedUserFailed = { [weak self] error in
       guard let self = self else { return }
-      self.showAlertOnMainThread(title: "Something wrong", message: error.localizedDescription, buttonTitle: "OK")
+      self.showAlert(title: "Something wrong", message: error.localizedDescription, buttonTitle: "OK")
     }
   }
   
