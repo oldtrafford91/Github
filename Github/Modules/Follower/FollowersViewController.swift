@@ -38,10 +38,16 @@ class FollowersViewController: UIViewController {
   private func configureHierachy() {
     title = viewModel.username
     view.backgroundColor = .systemBackground
-    navigationController?.navigationBar.prefersLargeTitles = true
+    configureNavigationBar()
     configureCollectionView()
     configureSearchController()
     configureViewModelBinding()
+  }
+  
+  private func configureNavigationBar() {
+    let doneButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(favoritesUser))
+    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationItem.rightBarButtonItem = doneButton
   }
   
   private func configureCollectionView() {
@@ -115,7 +121,7 @@ class FollowersViewController: UIViewController {
     }
   }
   
-  // MARK: - Actions
+  // MARK: - Event Handlers
   private func getFollowers() {
     viewModel.getFollowers(of: viewModel.username)
   }
@@ -129,6 +135,10 @@ class FollowersViewController: UIViewController {
     currentSnapshot.appendSections([.main])
     currentSnapshot.appendItems(followers, toSection: .main)
     dataSource.apply(currentSnapshot, animatingDifferences: animated)
+  }
+  
+  @objc private func favoritesUser() {
+    print(viewModel.username)
   }
 }
 
